@@ -1,0 +1,39 @@
+#: kivy 1.10.0
+
+<Root>
+    AnchorLayout:
+        anchor_y:'top'
+        anchor_x:'left'
+        padding: 20
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 1, 0, 0, 1  # red
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: 'Lives: x2'
+            size: self.texture_size
+            size_hint: None, None
+
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'top'
+        padding: 20
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 1, 1  # blue
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: 'Score: 0000000'
+            size: self.texture_size
+            size_hint: None,None
+
+    Card:
+        canvas:
+            Rectangle:
+                source: 'kali_mann.png'
+                pos: self.center_x - (self.width/4), self.center_y - ((self.height-100)/2)
+                size: self.width/2, self.height-100
